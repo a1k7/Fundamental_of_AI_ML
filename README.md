@@ -67,3 +67,26 @@ Cost = (difficulty × 3) + (10 − priority) + (deadline × 2)
 ---
 
 ## 📂 Project Structure
+smart-study-planner/
+│
+├── main.py # Entry point
+├── task.py # Task class
+├── planner.py # Output formatting
+├── search_algorithms.py # BFS, DFS
+├── hill_climbing.py # Hill Climbing logic
+├── heuristic.py # A* implementation
+├── utils.py # Cost function
+├── README.md
+└── report.pdf
+---
+
+## ▶️ How to Run
+
+### 1️⃣ Clone Repository
+```bash
+git clone <your-repo-link>
+cd smart-study-planner
+python main.py
+
+
+
