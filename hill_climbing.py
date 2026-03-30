@@ -1,20 +1,25 @@
 import random
-from utils import total_cost
+from utils import calculate_cost
 
-def hill_climbing(tasks):
-    current=tasks[:]
+
+def hill_climbing(tasks, energy_level, max_time):
+    current = tasks[:]
     random.shuffle(current)
-    current_cost=total_cost(current)
+
+    current_cost = calculate_cost(current, energy_level, max_time)
 
     while True:
-        neighbour=current[:]
-        i,j=random.sample(range(len(tasks)),2)
-        neighbour[i],neighbour[j]=neighbour[j],neighbour[i]
+        neighbor = current[:]
 
-        neighbour_cost=total_cost(neighbour)
-        if neighbour_cost<current_cost:
-            current=neighbour
-            current_cost=neighbour_cost
+        i, j = random.sample(range(len(tasks)), 2)
+        neighbor[i], neighbor[j] = neighbor[j], neighbor[i]
+
+        neighbor_cost = calculate_cost(neighbor, energy_level, max_time)
+
+        if neighbor_cost < current_cost:
+            current = neighbor
+            current_cost = neighbor_cost
         else:
             break
-    return current
+
+    return current, current_cost
