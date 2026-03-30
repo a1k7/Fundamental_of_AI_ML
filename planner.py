@@ -1,39 +1,34 @@
-from search_algorithms import bfs
-from utils import total_cost
 from heuristic import a_star
 from hill_climbing import hill_climbing
+from search_algorithms import bfs
 from dfs import dfs
 
 
 def format_plan(plan):
-    if not plan:
-        return "❌ No valid plan found"
-
     return " → ".join([t.name for t in plan])
 
 
-def print_section(title, plan):
-    print("\n" + "=" * 50)
-    print(f"🚀 {title}")
+def run_planner(tasks, energy_level, max_time):
+    print("\n🧠 ADAPTIVE AI STUDY PLANNER")
     print("=" * 50)
 
-    print("Plan:")
-    print(format_plan(plan))
+    bfs_plan, bfs_cost = bfs(tasks, energy_level, max_time)
+    dfs_plan, dfs_cost = dfs(tasks, energy_level, max_time)
+    astar_plan, astar_cost = a_star(tasks, energy_level, max_time)
+    hill_plan, hill_cost = hill_climbing(tasks, energy_level, max_time)
 
-    if plan:
-        print(f"\nTotal Cost: {total_cost(plan)}")
+    print("\n🚀 BFS PLAN")
+    print(format_plan(bfs_plan))
+    print("Cost:", bfs_cost)
 
+    print("\n🚀 DFS PLAN")
+    print(format_plan(dfs_plan))
+    print("Cost:", dfs_cost)
 
-def run_planner(tasks):
-    print("\n🧠 SMART STUDY PLANNER (AI POWERED)")
-    print("=" * 50)
+    print("\n🚀 A* OPTIMAL PLAN")
+    print(format_plan(astar_plan))
+    print("Cost:", astar_cost)
 
-    bfs_plan = bfs(tasks)
-    dfs_plan = dfs(tasks)[0]
-    hill_plan = hill_climbing(tasks)
-    astar_plan = a_star(tasks)
-
-    print_section("BFS PLAN", bfs_plan)
-    print_section("DFS PLAN", dfs_plan)
-    print_section("HILL CLIMBING PLAN", hill_plan)
-    print_section("A* PLAN", astar_plan)
+    print("\n⚡ HILL CLIMBING PLAN")
+    print(format_plan(hill_plan))
+    print("Cost:", hill_cost)
