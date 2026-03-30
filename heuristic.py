@@ -1,6 +1,6 @@
 import heapq
 from itertools import count
-from utils import total_cost
+from utils import calculate_cost
 
 
 def heuristic(path, tasks):
@@ -8,33 +8,34 @@ def heuristic(path, tasks):
     return sum(t.difficulty for t in remaining)
 
 
-def a_star(tasks):
+def a_star(tasks, energy_level, max_time):
     pq = []
-    counter = count()  # unique sequence count
+    counter = count()
 
-    # (f_cost, unique_id, path)
     heapq.heappush(pq, (0, next(counter), []))
 
     best = None
     best_cost = float('inf')
 
     while pq:
-        cost, _, path = heapq.heappop(pq)
+        _, _, path = heapq.heappop(pq)
 
         if len(path) == len(tasks):
-            final_cost = total_cost(path)
-            if final_cost < best_cost:
+            cost = calculate_cost(path, energy_level, max_time)
+
+            if cost < best_cost:
                 best = path
-                best_cost = final_cost
+                best_cost = cost
+
             continue
 
         for t in tasks:
             if t not in path:
                 new_path = path + [t]
-                g = total_cost(new_path)
+
+                g = calculate_cost(new_path, energy_level, max_time)
                 h = heuristic(new_path, tasks)
 
-                # push with UNIQUE counter → no comparisons on Task objects ever
                 heapq.heappush(pq, (g + h, next(counter), new_path))
 
-    return best if best else []
+    return best, best_cost
