@@ -1,15 +1,10 @@
 class Task:
-    def __init__(self, name, difficulty, deadline, priority):
+    def __init__(self, name, difficulty, deadline, priority, duration):
         self.name = name
         self.difficulty = difficulty
         self.deadline = deadline
         self.priority = priority
+        self.duration = duration
 
     def __repr__(self):
-        return f"{self.name}"
-
-    def __eq__(self, other):
-        return self.name == other.name
-
-    def __hash__(self):
-        return hash(self.name)
+        return self.name
