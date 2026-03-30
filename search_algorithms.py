@@ -1,12 +1,10 @@
 from collections import deque
-from utils import total_cost
+from utils import calculate_cost
 
-from collections import deque
-from utils import total_cost
 
-def bfs(tasks):
+def bfs(tasks, energy_level, max_time):
     queue = deque()
-    queue.append([])  # start with empty path
+    queue.append([])
 
     best = None
     best_cost = float('inf')
@@ -14,11 +12,9 @@ def bfs(tasks):
     while queue:
         path = queue.popleft()
 
-        # DEBUG (you can remove later)
-        # print("Current path:", path)
-
+        # Goal state
         if len(path) == len(tasks):
-            cost = total_cost(path)
+            cost = calculate_cost(path, energy_level, max_time)
 
             if cost < best_cost:
                 best = path
@@ -26,10 +22,10 @@ def bfs(tasks):
 
             continue
 
+        # Expand
         for t in tasks:
-            # safer comparison using names
-            if t.name not in [p.name for p in path]:
+            if t not in path:
                 new_path = path + [t]
                 queue.append(new_path)
 
-    return best if best else []
+    return best, best_cost
