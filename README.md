@@ -1,4 +1,4 @@
-Adaptive AI Study Planner (AI Powered)
+🧠 Adaptive AI Study Planner (AI Powered)
 
 📌 Overview
 Adaptive AI Study Planner is an AI-based system that helps in deciding the most effective order of studying tasks using search algorithms. Instead of only considering basic factors like difficulty and deadlines, the system models real-world conditions such as energy levels, fatigue, and time constraints.
@@ -96,7 +96,9 @@ git clone <your-repo-link>
 cd project
 2️⃣ Run Program
 python main.py
+
 🧪 Example Input
+
 tasks = [
     Task("Math", 8, 2, 9, 2),
     Task("Physics", 7, 3, 8, 2),
@@ -106,6 +108,7 @@ tasks = [
 
 energy_level = 6
 max_time = 5
+
 📊 Example Output
 🧠 ADAPTIVE AI STUDY PLANNER
 
