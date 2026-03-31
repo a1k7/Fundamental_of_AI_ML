@@ -13,17 +13,35 @@ The system uses several AI search algorithms to create study plans: Breadth-Firs
 
 Algorithms Used
 
-BFS (Breadth-First Search) explores all possible solutions level by level, ensuring completeness, but it is computationally expensive. DFS (Depth-First Search) explores one path deeply before backtracking; it's faster but not always optimal. Hill Climbing starts with a random solution and improves it step-by-step, but it can get stuck in a local optimum. A* Search uses a heuristic to guide the search, making it more efficient than BFS by combining actual cost with estimated future cost.
+BFS (Breadth-First Search) explores all possible solutions level by level, ensuring completeness, but it is computationally expensive. 
+DFS (Depth-First Search) explores one path deeply before backtracking; it's faster but not always optimal. 
+Hill Climbing starts with a random solution and improves it step-by-step, but it can get stuck in a local optimum. 
+A* Search uses a heuristic to guide the search, making it more efficient than BFS by combining actual cost with estimated future cost.
 
 Cost Function
 
 The system evaluates each study plan using a multi-factor cost model, which includes task difficulty, priority, deadline urgency, fatigue, time overflow, and bad sequencing penalties.
 
-Factors: Difficulty → Higher difficulty increases cost; Priority → Higher priority reduces cost; Deadline → Urgency increases cost; Fatigue → Consecutive hard tasks increase penalty; Time → Exceeding available time adds penalty; Sequence → Poor ordering (hard → hard) increases cost 🧠 Fatigue-aware Tracks mental fatigue and penalizes overload. 🔁 Sequence-aware Avoids placing multiple difficult tasks consecutively.
+Factors: Difficulty → Higher difficulty increases cost; Priority → Higher priority reduces cost; 
+         Deadline → Urgency increases cost; 
+         Fatigue → Consecutive hard tasks increase penalty; 
+         Time → Exceeding available time adds penalty; 
+         Sequence → Poor ordering (hard → hard) increases cost 🧠 Fatigue-aware Tracks mental fatigue and penalizes overload. 🔁 Sequence-aware Avoids placing multiple          difficult tasks consecutively.
 
-📂 Project Structure project/ │ ├── main.py # Entry point ├── task.py # Task class ├── planner.py # Output formatting ├── search_algorithms.py # BFS implementation ├── dfs.py # DFS implementation ├── hill_climbing.py # Hill Climbing logic ├── heuristic.py # A* implementation ├── utils.py # Cost function ├── README.md └── report.pdf
+📂 Project Structure project/ 
+│ ├── main.py # Entry point 
+  ├── task.py # Task class 
+  ├── planner.py # Output formatting 
+  ├── search_algorithms.py # BFS implementation 
+  ├── dfs.py # DFS implementation 
+  ├── hill_climbing.py # Hill Climbing logic 
+  ├── heuristic.py # A* implementation 
+  ├── utils.py # Cost function 
+  ├── README.md └── report.pdf
 
-▶️ How to Run 1️⃣ Clone Repository git clone cd project 2️⃣ Run Program python main.py
+▶️ How to Run 
+1️⃣ Clone Repository git clone cd project 
+2️⃣ Run Program python main.py
 
 🧪 Example Input
 
