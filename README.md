@@ -3,7 +3,7 @@ Adaptive AI Study Planner (AI Powered)
 The Adaptive AI Study Planner is an AI-driven system designed to optimize the sequencing of study tasks through the application of search algorithms. Beyond merely accounting for fundamental elements such as task difficulty and due dates, the system incorporates real-world variables, including energy levels, fatigue, and temporal limitations. This project serves as a demonstration of how Artificial Intelligence methodologies can be leveraged to replicate human decision-making processes, thereby enhancing practical applicability.
 
 
-🚨 Problem Statement 
+🚨 Problem Statement :
 Students often struggle to decide what to study next. This leads to: Poor time management Increased stress Mental fatigue Inefficient study patterns Most students randomly pick subjects without considering how task order affects productivity. In reality, the problem is not just about selecting tasks, but about sequencing them intelligently under constraints.
 
 This project approaches the problem as a state-space search, where each state represents a sequence of tasks. The goal is to find the best sequence, which has the lowest cost.
@@ -44,13 +44,13 @@ Factors: Difficulty → Higher difficulty increases cost; Priority → Higher pr
 1️⃣ Clone Repository git clone cd project 
 2️⃣ Run Program python main.py
 
-🧪 Example Input
+🧪 Example Input :
 
 tasks = [ Task("Math", 8, 2, 9, 2), Task("Physics", 7, 3, 8, 2), Task("AI", 6, 5, 10, 1), Task("English", 3, 4, 5, 1), ]
 
 energy_level = 6 max_time = 5
 
-📊 Example Output 🧠 ADAPTIVE AI STUDY PLANNER
+📊 Example Output : 🧠 ADAPTIVE AI STUDY PLANNER
 
 🚀 BFS PLAN Math → English → Physics → AI Cost: 143
 
@@ -60,11 +60,11 @@ energy_level = 6 max_time = 5
 
 ⚡ HILL CLIMBING PLAN English → Physics → AI → Math Cost: 143
 
-🌍 Real-Life Application This system can be used by students to: Plan study schedules based on available time Avoid burnout by managing fatigue Improve productivity by intelligent sequencing Make structured decisions instead of random choices It reflects real-world behavior where energy and fatigue influence performance.
+🌍 Real-Life Application : This system can be used by students to: Plan study schedules based on available time Avoid burnout by managing fatigue Improve productivity by intelligent sequencing Make structured decisions instead of random choices It reflects real-world behavior where energy and fatigue influence performance.
 
-⚠️ Observations Different algorithms produced different sequences Cost values may remain similar, but sequence quality differs A* generally produces more balanced plans Hill Climbing is faster but less stable This shows that optimization is not only about cost, but also about sequence quality and practicality.
+⚠️ Observations : Different algorithms produced different sequences Cost values may remain similar, but sequence quality differs A* generally produces more balanced plans Hill Climbing is faster but less stable This shows that optimization is not only about cost, but also about sequence quality and practicality.
 
-🚧 Debugging priority queue problems in A* was a headache. I also ran into object comparison errors. Designing a cost function that made sense was another hurdle. And then there was the challenge of juggling multiple constraints at once.
+🚧 Debugging : priority queue problems in A* was a headache. I also ran into object comparison errors. Designing a cost function that made sense was another hurdle. And then there was the challenge of juggling multiple constraints at once.
 
 📚 I learned that real-world AI problems demand careful modeling. Heuristic search techniques can really make a difference in practical applications. Constraints, such as fatigue and time, are absolutely vital. AI isn't just about the algorithms; it's about how you design the decision-making process.
 
