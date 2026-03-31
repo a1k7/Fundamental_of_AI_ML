@@ -3,7 +3,6 @@ from hill_climbing import hill_climbing
 from search_algorithms import bfs
 from dfs import dfs
 
-
 def format_plan(plan):
     return " → ".join([t.name for t in plan])
 
