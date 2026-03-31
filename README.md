@@ -3,7 +3,8 @@ Adaptive AI Study Planner (AI Powered)
 The Adaptive AI Study Planner is an AI-driven system designed to optimize the sequencing of study tasks through the application of search algorithms. Beyond merely accounting for fundamental elements such as task difficulty and due dates, the system incorporates real-world variables, including energy levels, fatigue, and temporal limitations. This project serves as a demonstration of how Artificial Intelligence methodologies can be leveraged to replicate human decision-making processes, thereby enhancing practical applicability.
 
 
-🚨 Problem Statement Students often struggle to decide what to study next. This leads to: Poor time management Increased stress Mental fatigue Inefficient study patterns Most students randomly pick subjects without considering how task order affects productivity. In reality, the problem is not just about selecting tasks, but about sequencing them intelligently under constraints.
+🚨 Problem Statement 
+Students often struggle to decide what to study next. This leads to: Poor time management Increased stress Mental fatigue Inefficient study patterns Most students randomly pick subjects without considering how task order affects productivity. In reality, the problem is not just about selecting tasks, but about sequencing them intelligently under constraints.
 
 This project approaches the problem as a state-space search, where each state represents a sequence of tasks. The goal is to find the best sequence, which has the lowest cost.
 
@@ -11,14 +12,14 @@ To make the solution more practical, the system was expanded into an adaptive AI
 
 The system uses several AI search algorithms to create study plans: Breadth-First Search (BFS), Depth-First Search (DFS), Hill Climbing, and A* Search.
 
-Algorithms Used
+Algorithms Used :
 
 BFS (Breadth-First Search) explores all possible solutions level by level, ensuring completeness, but it is computationally expensive. 
 DFS (Depth-First Search) explores one path deeply before backtracking; it's faster but not always optimal. 
 Hill Climbing starts with a random solution and improves it step-by-step, but it can get stuck in a local optimum. 
 A* Search uses a heuristic to guide the search, making it more efficient than BFS by combining actual cost with estimated future cost.
 
-Cost Function
+Cost Function :
 
 The system evaluates each study plan using a multi-factor cost model, which includes task difficulty, priority, deadline urgency, fatigue, time overflow, and bad sequencing penalties.
 
